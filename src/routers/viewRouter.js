@@ -3,8 +3,14 @@ const router = require("express").Router();
 router.get("/", (req, res) => {
   res.render("index");
 });
-router.get("/member", (req, res) => {
-  res.render("memberPage");
+router.get("/admin/dashboard", (req, res) => {
+  res.render("adminDashboard");
+});
+router.get("/admin/members", (req, res) => {
+  res.render("adminMembers");
+});
+router.get("/admin/members/tambah", (req, res) => {
+  res.render("adminMembersTambah");
 });
 
 module.exports = router;

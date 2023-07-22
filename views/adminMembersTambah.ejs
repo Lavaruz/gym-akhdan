@@ -1,0 +1,37 @@
+<%- include('./layouts/header'); -%>
+<main class="d-flex">
+  <%- include('./layouts/sidebar'); -%>
+  <section id="main-menu" class="col">
+    <h2 class="mb-4">Tambah Member Baru</h2>
+    <form id="add-member">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+        <div id="emailHelp" class="form-text">
+          We'll never share your email with anyone else.
+        </div>
+      </div>
+      <div class="mb-3">
+        <select class="js-example-basic-single" name="state" style="width: 25%">
+          <option value="AL">1 Bulan</option>
+          <option value="WY">3 Bulan</option>
+          <option value="WY">12 Bulan</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Simpan</button>
+    </form>
+  </section>
+</main>
+<%- include('./layouts/footer'); -%>
+
+<script src="/js/adminMembersTambah.js"></script>
+<script>
+  $(".nav-dashboard").removeClass("active");
+  $(".nav-members").addClass("active");
+  $(".js-example-basic-single").select2();
+</script>

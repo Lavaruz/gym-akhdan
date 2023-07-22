@@ -1,21 +1,140 @@
 <%- include('./layouts/header'); -%> <%- include('./layouts/navbar'); -%>
 
-<main class="">
-  <div class="container h-[calc(100vh-5rem)] flex items-center">
-    <div class="">
-      <h1 class="font-bold text-6xl mb-12">
-        Become stronger version <br />
-        <span class="text-red-600">of yourself</span>
-      </h1>
-      <a href="/member"
-        ><button
-          class="bg-red-500 hover:bg-red-600 active:bg-red-700 focus:outline-none focus:ring focus:ring-violet-300 text-white w-max px-8 py-2 rounded-lg m-auto"
-        >
-          Show Member
-        </button></a
+<link rel="stylesheet" href="/css/index.css" />
+<style>
+  body {
+    padding: 0 7.5%;
+  }
+</style>
+<header>
+  <h1>
+    Unleash Your Potential: <br />
+    Stronger, Fitter, Better!
+  </h1>
+  <p>Welcome to Your Fitness Journey: Where Transformation Begins!</p>
+  <button type="button" class="btn btn-success">Join US</button>
+</header>
+<!-- GALLERYYYYYYYYYYY -->
+<section id="gallery" class="mx-auto">
+  <div class="row">
+    <div id="carouselExampleIndicators" class="carousel slide w-50 col">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="/img/carousel.jpg"
+            class="d-block w-100"
+            alt="/img/carousel.jpg"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="/img/carousel.jpg"
+            class="d-block w-100"
+            alt="/img/carousel.jpg"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="/img/carousel.jpg"
+            class="d-block w-100"
+            alt="/img/carousel.jpg"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
       >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="col">
+      <h4>All of our gallery</h4>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+        laboriosam blanditiis quia vitae optio culpa totam ullam dicta deleniti
+        fugiat aut nemo pariatur numquam itaque sit vero quidem, accusamus
+        placeat est odit cumque labore! Minus esse cumque unde, expedita
+        laboriosam deleniti earum aliquam nisi dicta cum, ut, autem perferendis
+        vel?
+      </p>
     </div>
   </div>
-</main>
+</section>
+
+<!-- LOCATIONNNNNNNNN -->
+<section id="location">
+  <div class="row">
+    <div class="col">
+      <h3>Fitness Center</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus iste
+        aspernatur cupiditate molestiae sint asperiores quo quisquam, ipsum
+        voluptatum expedita?
+      </p>
+    </div>
+    <div class="col">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.9714569259895!2d120.24912317393687!3d-5.108302151745968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbc256653efbd09%3A0xbffd9e43b65a172a!2sAkhdan%20Fitnes%20Center!5e0!3m2!1sid!2sid!4v1690011224417!5m2!1sid!2sid"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
+<section id="membership">
+  <h2>Daftar Membership Fitness Center</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut commodi
+    assumenda debitis consectetur, nam beatae.
+  </p>
+  <table id="member-table">
+    <thead>
+      <th>No</th>
+      <th>NIS</th>
+      <th>Nama</th>
+      <th>Kelas</th>
+    </thead>
+  </table>
+</section>
 
 <%- include('./layouts/footer'); -%>
+<script src="/js/index.js"></script>

@@ -1,0 +1,36 @@
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+#main-menu {
+  background-color: #fafcff;
+  margin: 2rem;
+}
+#side-menu {
+  height: 100vh;
+}
+.dashboard-info div {
+  height: 100px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 5px;
+}
+.dashboard-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.dashboard-chart {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+}
+.dashboard-chart div {
+  height: 350px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 5px;
+}

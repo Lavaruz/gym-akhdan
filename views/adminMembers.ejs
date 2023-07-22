@@ -1,0 +1,32 @@
+<%- include('./layouts/header'); -%>
+<main class="d-flex">
+  <%- include('./layouts/sidebar'); -%>
+  <section id="main-menu" class="col">
+    <h2 class="mb-3">Members</h2>
+    <div class="d-flex justify-content-end mb-5 gap-3">
+      <a href="/admin/members/tambah">
+        <button type="button" class="btn btn-success">
+          <i class="uil uil-user-plus"></i> Tambah Member
+        </button>
+      </a>
+      <button type="button" class="btn btn-danger">
+        <i class="uil uil-trash-alt"></i> Hapus
+      </button>
+    </div>
+    <table id="member-table">
+      <thead>
+        <th>No</th>
+        <th>NIS</th>
+        <th>Nama</th>
+        <th>Kelas</th>
+      </thead>
+    </table>
+  </section>
+</main>
+<%- include('./layouts/footer'); -%>
+
+<script>
+  $(".nav-dashboard").removeClass("active");
+  $(".nav-members").addClass("active");
+</script>
+<script src="/js/index.js"></script>

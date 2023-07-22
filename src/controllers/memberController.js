@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { Member } = require("../models");
 const response = require("./response");
 
 async function getAllMember(req, res) {
@@ -12,6 +12,34 @@ async function getAllMember(req, res) {
   }
 }
 
+async function addNewMember(req, res) {
+  try {
+    response(201, "success create new member", [], res);
+  } catch (error) {
+    response(
+      400,
+      "server failed to create new member",
+      { error: error.message },
+      res
+    );
+  }
+}
+
+async function updateMember(req, res) {
+  try {
+    response(200, "success update member", [], res);
+  } catch (error) {
+    response(
+      400,
+      "server failed to update member",
+      { error: error.message },
+      res
+    );
+  }
+}
+
 module.exports = {
   getAllMember,
+  addNewMember,
+  updateMember,
 };

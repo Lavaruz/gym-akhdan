@@ -1,0 +1,37 @@
+<%- include('./layouts/header'); -%>
+<style>
+  p {
+    margin: 0;
+  }
+</style>
+<main class="d-flex">
+  <%- include('./layouts/sidebar'); -%>
+  <section id="main-menu" class="col">
+    <h2 class="mb-4">Dashboard</h2>
+    <div class="dashboard d-flex flex-column gap-3">
+      <div class="dashboard-info gap-3">
+        <div class="px-4 d-flex justify-content-center flex-column">
+          <b style="color: blue">Jumlah Member</b>
+          <span><b>$100,00</b></span>
+        </div>
+        <div class="px-4 d-flex justify-content-center flex-column">
+          <b style="color: green">Status Aktif</b>
+          <span><b>$100,00</b></span>
+        </div>
+        <div class="px-4 d-flex justify-content-center flex-column">
+          <b style="color: darkmagenta">Tenggat Bayar</b>
+          <span><b>$100,00</b></span>
+        </div>
+        <div class="px-4 d-flex justify-content-center flex-column">
+          <b style="color: orange">Pendapatan</b>
+          <span><b>$100,00</b></span>
+        </div>
+      </div>
+      <div class="dashboard-chart gap-3">
+        <div class=""></div>
+        <div class=""></div>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include('./layouts/footer'); -%>
