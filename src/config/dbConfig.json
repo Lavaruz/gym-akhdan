@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "181001",
-    "database": "sakila",
+    "database": "fitness-center",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

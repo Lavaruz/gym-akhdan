@@ -9,7 +9,7 @@ ul {
 }
 #main-menu {
   background-color: #fafcff;
-  margin: 2rem;
+  padding: 2rem;
 }
 #side-menu {
   height: 100vh;
@@ -33,4 +33,8 @@ ul {
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 5px;
+}
+label.required:after {
+  content: " *";
+  color: red;
 }

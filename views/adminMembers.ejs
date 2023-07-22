@@ -2,23 +2,29 @@
 <main class="d-flex">
   <%- include('./layouts/sidebar'); -%>
   <section id="main-menu" class="col">
-    <h2 class="mb-3">Members</h2>
-    <div class="d-flex justify-content-end mb-5 gap-3">
-      <a href="/admin/members/tambah">
-        <button type="button" class="btn btn-success">
-          <i class="uil uil-user-plus"></i> Tambah Member
+    <div class="d-flex justify-content-between">
+      <h2 class="mb-3"><i class="uil uil-users-alt"></i> Members</h2>
+
+      <div class="d-flex justify-content-end mb-5 gap-3">
+        <a href="/admin/members/tambah">
+          <button type="button" class="btn btn-success">
+            <i class="uil uil-user-plus"></i> Tambah Member
+          </button>
+        </a>
+        <button type="button" class="btn btn-danger hapus-button" disabled>
+          <i class="uil uil-trash-alt"></i> Hapus
         </button>
-      </a>
-      <button type="button" class="btn btn-danger">
-        <i class="uil uil-trash-alt"></i> Hapus
-      </button>
+      </div>
     </div>
     <table id="member-table">
       <thead>
         <th>No</th>
-        <th>NIS</th>
         <th>Nama</th>
-        <th>Kelas</th>
+        <th>Tanggal Daftar</th>
+        <th>Tanggal Berahir</th>
+        <th>Status</th>
+        <th></th>
+        <th><input type="checkbox" name="" id="select-all" /></th>
       </thead>
     </table>
   </section>
@@ -29,4 +35,4 @@
   $(".nav-dashboard").removeClass("active");
   $(".nav-members").addClass("active");
 </script>
-<script src="/js/index.js"></script>
+<script src="/js/adminMembers.js"></script>

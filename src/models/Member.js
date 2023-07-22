@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       nama: DataTypes.STRING,
       tanggal_daftar: DataTypes.STRING,
-      tanggal_berkahir: DataTypes.STRING,
+      tanggal_berakhir: DataTypes.STRING,
     },
     {
       timestamps: false,
