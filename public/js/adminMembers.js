@@ -1,4 +1,10 @@
 $(document).ready(function () {
+  const tooltipTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="tooltip"]'
+  );
+  const tooltipList = [...tooltipTriggerList].map(
+    (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+  );
   $("#select-all").on("click", function () {
     if (this.checked) {
       // Iterate each checkbox
@@ -31,6 +37,14 @@ $(document).ready(function () {
         data: "tanggal_daftar",
         render: function (data) {
           return new Date(+data).toLocaleString("id-ID", {
+            dateStyle: "long",
+          });
+        },
+      },
+      {
+        data: "tanggal_mulai",
+        render: function (data) {
+          return new Date(+data).toLocaleString("id-ID", {
             dateStyle: "full",
           });
         },
@@ -56,7 +70,7 @@ $(document).ready(function () {
       {
         data: "id",
         render: function () {
-          return `<i class="uil uil-edit" style="color: green;"></i>`;
+          return `<a href="#" data-bs-toggle="tooltip" data-bs-title="Edit Member Ini"><i class="uil uil-edit" style="color: green;"></i></a>`;
         },
       },
       {

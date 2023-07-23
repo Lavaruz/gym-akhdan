@@ -12,5 +12,8 @@ router.get("/admin/members", (req, res) => {
 router.get("/admin/members/tambah", (req, res) => {
   res.render("adminMembersTambah");
 });
+router.get("/admin/login", (req, res) => {
+  res.render("adminLogin");
+});
 
 module.exports = router;

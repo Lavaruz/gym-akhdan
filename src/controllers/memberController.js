@@ -7,16 +7,19 @@ async function getAllMember(req, res) {
       response(200, "success get all data", result, res);
     });
   } catch (error) {
-    response(200, "server failed to get data", { error: error.message }, res);
+    response(200, "server failed to get data", { error: error }, res);
+    console.log(error);
   }
 }
 
 async function addNewMember(req, res) {
   try {
-    let { nama, tanggal_berakhir, tanggal_daftar } = req.body;
+    let { nama, tanggal_berakhir, tanggal_daftar, tanggal_mulai } = req.body;
+    console.log(req.body);
     await Member.create({
       nama,
       tanggal_berakhir,
+      tanggal_mulai,
       tanggal_daftar,
     }).then(() => {
       response(201, "success create new member", req.body, res);
@@ -24,10 +27,11 @@ async function addNewMember(req, res) {
   } catch (error) {
     response(
       400,
-      "server failed to create new member",
+      "Server failed to create new member",
       { error: error.message },
       res
     );
+    console.log(error);
   }
 }
 

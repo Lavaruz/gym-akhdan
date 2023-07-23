@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  /* font-family: "Inter", sans-serif; */
+}
+body {
+  color: #212529;
+}
 li {
   list-style-type: none;
   margin: 0;
@@ -19,17 +26,25 @@ ul {
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 5px;
+  position: relative;
 }
 .dashboard-info {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+.dashboard-info .info-style {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  background-color: #4066d5;
 }
 .dashboard-chart {
   display: grid;
   grid-template-columns: 1fr 0.5fr;
 }
 .dashboard-chart div {
-  height: 350px;
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 5px;
@@ -37,4 +52,17 @@ ul {
 label.required:after {
   content: " *";
   color: red;
+}
+.overview-head {
+  background-color: #f7f8fc;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgb(183, 183, 183);
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
 }

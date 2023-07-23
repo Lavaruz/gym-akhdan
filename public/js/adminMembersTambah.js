@@ -6,10 +6,12 @@ $(document).ready(function () {
     const formData = {
       nama: $("#exampleInputEmail1").val(),
       tanggal_daftar: new Date().getTime().toString(),
+      tanggal_mulai: new Date().getTime().toString(),
       tanggal_berakhir: new Date()
         .setDate(new Date().getDate() + +$(".form-select").val())
         .toString(),
     };
+    console.log(formData);
 
     // Mengirim permintaan POST dengan jQuery AJAX
     $.ajax({
