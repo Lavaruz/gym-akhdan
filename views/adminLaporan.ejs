@@ -1,0 +1,59 @@
+<%- include('./layouts/header'); -%>
+<main class="d-flex">
+  <%- include('./layouts/sidebar'); -%>
+  <section id="main-menu" class="col">
+    <h2>Cetak Laporan</h2>
+    <nav aria-label="breadcrumb" class="mb-5">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Laporan</li>
+      </ol>
+    </nav>
+    <form id="form-laporan">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Jenis Laporan</label>
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>Open this select menu</option>
+          <option value="1" disabled>Full</option>
+          <option value="2" disabled>Dashboard Only</option>
+          <option value="3" selected>Member Only</option>
+        </select>
+      </div>
+      <div class="mb-4 row gap-3">
+        <div class="col">
+          <label for="exampleInputEmail1" class="form-label">Dari: </label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            id="dari_tanggal"
+            placeholder="Tanggal Daftar"
+            onfocus="(this.type='date')"
+            onblur="(this.type='text')"
+          />
+        </div>
+        <div class="col">
+          <label for="exampleInputEmail1" class="form-label">Sampai: </label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            id="sampai_tanggal"
+            placeholder="Tanggal Daftar"
+            onfocus="(this.type='date')"
+            onblur="(this.type='text')"
+          />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        <i class="uil uil-file-download"></i> Cetak
+      </button>
+    </form>
+  </section>
+</main>
+<%- include('./layouts/footer'); -%>
+<script>
+  $(".nav-dashboard").removeClass("active");
+  $(".nav-laporan").addClass("active");
+</script>
+<script src="/js/adminLaporan.js"></script>

@@ -5,20 +5,6 @@ $(document).ready(function () {
   const tooltipList = [...tooltipTriggerList].map(
     (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
   );
-  $("#select-all").on("click", function () {
-    if (this.checked) {
-      // Iterate each checkbox
-      $(".hapus-button").attr("disabled", false);
-      $(":checkbox").each(function () {
-        this.checked = true;
-      });
-    } else {
-      $(".hapus-button").attr("disabled", true);
-      $(":checkbox").each(function () {
-        this.checked = false;
-      });
-    }
-  });
 
   $("#member-table").DataTable({
     ajax: {
@@ -75,18 +61,51 @@ $(document).ready(function () {
       },
       {
         data: "id",
-        render: function () {
-          return `<input type="checkbox" name="" class="checkbox-delete" />`;
+        render: function (data) {
+          return `<input type="checkbox" name="checkboxMember" class="checkboxMember" value="${data}"/>`;
         },
       },
     ],
     initComplete: function () {
-      $(".checkbox-delete").on("click", function () {
+      $(".checkboxMember").on("click", function () {
         if ($(this).is(":checked")) {
           $(".hapus-button").attr("disabled", false);
         } else {
           $(".hapus-button").attr("disabled", true);
         }
+      });
+      $("#select-all").on("click", function () {
+        if (this.checked) {
+          // Iterate each checkbox
+          $(".hapus-button").attr("disabled", false);
+          $(":checkbox").each(function () {
+            this.checked = true;
+          });
+        } else {
+          $(".hapus-button").attr("disabled", true);
+          $(":checkbox").each(function () {
+            this.checked = false;
+          });
+        }
+      });
+      $("#form-delete").submit((e) => {
+        e.preventDefault();
+        let selectedData = [];
+        $(".checkboxMember:checked").each(function () {
+          selectedData.push($(this).val());
+        });
+        console.log(selectedData);
+        $.ajax({
+          url: "/api/v1/members",
+          type: "DELETE",
+          data: JSON.stringify({ checkedMember: selectedData }),
+          contentType: "application/json",
+          success: (response) => {
+            if (response.status_code == 200) {
+              window.location = "/members";
+            }
+          },
+        });
       });
     },
   });

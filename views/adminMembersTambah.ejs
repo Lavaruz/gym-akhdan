@@ -2,7 +2,17 @@
 <main class="d-flex">
   <%- include('./layouts/sidebar'); -%>
   <section id="main-menu" class="col">
-    <h2 class="mb-4">Tambah Member Baru</h2>
+    <h2>Tambah Member Baru</h2>
+    <nav
+      style="--bs-breadcrumb-divider: '>'"
+      aria-label="breadcrumb"
+      class="mb-5"
+    >
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Members</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Tambah</li>
+      </ol>
+    </nav>
     <form id="add-member">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label required"

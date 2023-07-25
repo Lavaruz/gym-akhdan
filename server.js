@@ -17,11 +17,13 @@ const db = require("./src/models");
 const viewRouter = require("./src/routers/viewRouter");
 const indexRouter = require("./src/routers/indexRouter");
 const memberRouter = require("./src/routers/memberRouter");
+const utilsRouter = require("./src/routers/utilsRouter");
 
 const VERSION_API = "v1";
 app.use("/", viewRouter);
 app.use(`/api/${VERSION_API}`, indexRouter);
 app.use(`/api/${VERSION_API}/members`, memberRouter);
+app.use(`/api/${VERSION_API}/utils`, utilsRouter);
 
 let PORT = process.env.PORT || 3000;
 db.sequelize.sync({ alter: true }).then(() => {

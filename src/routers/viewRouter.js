@@ -1,18 +1,18 @@
 const router = require("express").Router();
 
-router.get("/", (req, res) => {
-  res.render("index");
-});
-router.get("/admin/dashboard", (req, res) => {
+router.get("/dashboard", (req, res) => {
   res.render("adminDashboard");
 });
-router.get("/admin/members", (req, res) => {
+router.get("/members", (req, res) => {
   res.render("adminMembers");
 });
-router.get("/admin/members/tambah", (req, res) => {
+router.get("/members/tambah", (req, res) => {
   res.render("adminMembersTambah");
 });
-router.get("/admin/login", (req, res) => {
+router.get("/laporan", (req, res) => {
+  res.render("adminLaporan");
+});
+router.get("/login", (req, res) => {
   res.render("adminLogin");
 });
 

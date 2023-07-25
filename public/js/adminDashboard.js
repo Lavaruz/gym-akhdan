@@ -103,7 +103,7 @@ $.get("/api/v1/members", function (data) {
       datasets: [
         {
           label: "Member Baru",
-          data: [memberAktif.length, 3],
+          data: [memberAktif.length, memberDeaktif.length],
           borderWidth: 5,
           backgroundColor: ["#1cc88a", "#e74839"],
         },

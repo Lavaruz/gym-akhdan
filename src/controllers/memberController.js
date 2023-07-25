@@ -48,8 +48,31 @@ async function updateMember(req, res) {
   }
 }
 
+async function deleteMember(req, res) {
+  try {
+    let checkedMember = req.body.checkedMember;
+    if (!checkedMember) return response(400, "body cant be undefined", [], res);
+    await Member.destroy({
+      where: {
+        id: checkedMember,
+      },
+    }).then((respon) => {
+      if (!respon)
+        return response(400, "delete failed, user not found", respon, res);
+      return response(200, "success delete user", respon, res);
+    });
+  } catch (error) {
+    response(
+      500,
+      "server failed to delete user",
+      { error: error.message },
+      res
+    );
+  }
+}
 module.exports = {
   getAllMember,
   addNewMember,
   updateMember,
+  deleteMember,
 };

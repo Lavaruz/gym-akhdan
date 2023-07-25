@@ -7,7 +7,12 @@
 <main class="d-flex">
   <%- include('./layouts/sidebar'); -%>
   <section id="main-menu" class="col">
-    <h2 class="mb-4"><i class="uil uil-dashboard"></i> Dashboard</h2>
+    <h2>Dashboard</h2>
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+      </ol>
+    </nav>
     <div class="dashboard d-flex flex-column gap-3">
       <div class="dashboard-info gap-3">
         <div class="px-4 d-flex justify-content-center flex-column">
@@ -29,14 +34,14 @@
       </div>
       <div class="dashboard-chart gap-3">
         <div class="dashboard-membership-overview">
-          <div class="d-flex justify-content-between px-3 h-auto overview-head">
+          <div class="d-flex justify-content-between px-3 overview-head">
             <p class="fw-bold">Membership Overview</p>
             <span><i class="uil uil-ellipsis-v"></i></span>
           </div>
           <div class=""><canvas id="myChartBar"></canvas></div>
         </div>
         <div class="dashboard-membership-overview">
-          <div class="d-flex justify-content-between px-3 h-auto overview-head">
+          <div class="d-flex justify-content-between px-3 overview-head">
             <p class="fw-bold">Activity Tracker</p>
             <span><i class="uil uil-ellipsis-v"></i></span>
           </div>

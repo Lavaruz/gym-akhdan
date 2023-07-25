@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      header {
+        text-align: center;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+      }
+      header div h3 {
+        margin: 0.3rem 0;
+      }
+      header h2 {
+        margin: 0.2rem 0;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+      }
+      main {
+        margin: 3rem;
+      }
+      table.customTable {
+        width: 100%;
+        background-color: #ffffff;
+        border-collapse: collapse;
+        border-width: 2px;
+        border-color: #020300;
+        border-style: solid;
+        color: #000000;
+      }
+
+      table.customTable td,
+      table.customTable th {
+        border-width: 2px;
+        border-color: #020300;
+        border-style: solid;
+        padding: 5px;
+      }
+
+      table.customTable thead {
+        background-color: #48e1f8;
+      }
+      footer {
+        margin: 3rem 0 0 75%;
+        display: flex;
+        justify-content: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="">
+        <h2>Laporan Membership Fitness Center</h2>
+        <h3>04/07/2023 - 04/07/2023</h3>
+      </div>
+    </header>
+    <table class="customTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Tanggal Daftar</th>
+          <th>Tanggal Mulai</th>
+          <th>Tanggal Berkahir</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#ifCond users.length '==' '0'}}
+        <tr>
+          <td>Tidak ada data member</td>
+          <td>Tidak ada data member</td>
+          <td>Tidak ada data member</td>
+          <td>Tidak ada data member</td>
+          <td>Tidak ada data member</td>
+        </tr>
+        {{/ifCond}} {{#ifCond users.length '!=' '0'}} {{#each users}}
+        <tr>
+          <td>{{this.id}}</td>
+          <td>{{this.nama}}</td>
+          <td>{{this.tanggal_daftar}}</td>
+          <td>{{this.tanggal_mulai}}</td>
+          <td>{{this.tanggal_berakhir}}</td>
+        </tr>
+        {{/each}} {{/ifCond}}
+      </tbody>
+    </table>
+    <footer>
+      <div class="footer-ttd">
+        <p>Jakarta, {{today}}</p>
+        <p>Admin</p>
+        <br />
+        <p>Assami Muzaki</p>
+      </div>
+    </footer>
+  </body>
+</html>
